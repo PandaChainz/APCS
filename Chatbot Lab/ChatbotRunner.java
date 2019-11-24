@@ -1,4 +1,4 @@
-Jimport java.util.Scanner;
+import java.util.Scanner;
 public class ChatbotRunner
 {
   public static void main(String[] args){
