@@ -18,19 +18,20 @@ public class Chatbot {
   }
 
   public void setUsername(String n) {
-      username = n.substring(n.lastIndexOf(" ") +1);
+    username = n.substring(n.lastIndexOf(" ") + 1);
   }
 
   public String getUsername() {
     return username;
   }
 
-  //FIX THE UPPERCASE OR LOWERCASE IDENTIFICATION FOR EACH METHOD
+  // FIX THE UPPERCASE OR LOWERCASE IDENTIFICATION FOR EACH METHOD
   public String areResponse(String phrase) {
-    if ((phrase.contains("New York")) || (phrase.contains("new york") || (phrase.contains("Queens")) || (phrase.contains("The United States")))) {
+    if ((phrase.contains("New York"))
+        || (phrase.contains("new york") || (phrase.contains("Queens")) || (phrase.contains("The United States")))) {
       return "Yes, I am!";
     } else
-    return "No, I'm not";
+      return "No, I'm not";
   }
 
   public static String canResponse(String phrase) {
@@ -40,37 +41,33 @@ public class Chatbot {
     return "Sorry, I don't understand what you mean";
   }
 
-   public static String whatResponse(String phrase) {
+  public static String whatResponse(String phrase) {
     if (phrase.contains("name")) {
       return "My name is " + name;
-    } else if ((phrase.contains("school")) || (phrase.contains("School")))
-    {
+    } else if ((phrase.contains("school")) || (phrase.contains("School"))) {
       return "I go to " + school;
-  }
+    }
     if (phrase.contains("age")) {
       return "I'm " + Integer.toString(age);
-    } else if ((phrase.contains("school")) || (phrase.contains("School")))
-    {
+    } else if ((phrase.contains("school")) || (phrase.contains("School"))) {
       return "I go to " + school;
-  }
-      return ("I don't know.");
     }
+    return ("I don't know.");
+  }
 
   public String response(String phrase) {
     if ((phrase.contains("What")) || (phrase.contains("what"))) {
       return whatResponse(phrase);
-    } else if ((phrase.contains("Where")) || (phrase.contains("where"))) 
-    {
+    } else if ((phrase.contains("Where")) || (phrase.contains("where"))) {
       return whereResponse(phrase);
-      } else if ((phrase.contains("How")) || (phrase.contains("how"))) 
-      {
+    } else if ((phrase.contains("How")) || (phrase.contains("how"))) {
       return howResponse(phrase);
-      } else if (phrase.contains("Can")) {
-        return canResponse(phrase);
-      } else if (phrase.contains("Are")) {
-        return areResponse(phrase);
-      } else
-    return "Nice to meet you " + username;
+    } else if (phrase.contains("Can")) {
+      return canResponse(phrase);
+    } else if (phrase.contains("Are")) {
+      return areResponse(phrase);
+    } else
+      return "Nice to meet you " + username;
   }
 
   public String howResponse(String phrase) {
@@ -84,10 +81,9 @@ public class Chatbot {
   public String whereResponse(String phrase) {
     if ((phrase.contains("from")) || (phrase.contains("live"))) {
       return "I'm from the " + place;
-    } else if ((phrase.contains("school")) || (phrase.contains("School")))
-    {
+    } else if ((phrase.contains("school")) || (phrase.contains("School"))) {
       return "I go to " + school;
-  }
-  return "I'm not sure what you mean";
+    }
+    return "I'm not sure what you mean";
   }
 }
